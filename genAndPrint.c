@@ -7,8 +7,8 @@ int main() {
     char* isPrime = malloc(loopLength * sizeof(char));
     memset(isPrime, 1, loopLength * sizeof(char));
 
-    isPrime[0] = 0;  // 0 não é primo
-    isPrime[1] = 0;  // 1 não é primo
+    isPrime[0] = 0;  // 0 isn't prime
+    isPrime[1] = 0;  // 1 isn't prime
 
     for (int i = 2; i * i < loopLength; i++) {
         if (isPrime[i]) {
