@@ -29,7 +29,7 @@ int main() {
     // Find all prime numbers up to the limit
     sieveOfEratosthenes(loopLength, isPrime);
 
-    FILE* file = fopen("./docs/primesaaaa.txt", "w");
+    FILE* file = fopen("./docs/primes.txt", "w");
     if (file == NULL) {
         printf("Não foi possível abrir o arquivo primes.txt\n");
         free(isPrime);
