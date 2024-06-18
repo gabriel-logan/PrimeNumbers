@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 int main() {
-    int loopLength = 10;
+    int loopLength = 10000000;
     int* primes = malloc(loopLength * sizeof(int));
     int index = 0;
 
