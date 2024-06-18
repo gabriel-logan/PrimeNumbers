@@ -50,3 +50,20 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+## Private
+*.key
+*.pem
+*.ppk
+*.p12
+*.pfx
+*.cer
+*.crt
+*.pub
+*.asc
+*.gpg
+*.jks
+*.keystore
+*.p7b
+*.p7s
+server.txt
