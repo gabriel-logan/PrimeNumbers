@@ -39,7 +39,7 @@ int main() {
     const char* filename = "./docs/primes.txt";
     int lastNumber = getLastNumberFromFile(filename);
     int start = lastNumber + 2;  // Start from the next number after the last in the file
-    int loopLength = 10000000;   // Number of numbers to check for primality
+    int loopLength = 100000000;  // Number of numbers to check for primality
     int limit = start + loopLength;
 
     // Allocate memory for the boolean array that indicates whether the number is prime
