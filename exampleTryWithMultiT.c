@@ -1,10 +1,10 @@
 #include <math.h>
-#include <pthread.h>
+#include <pthread.h>  // Include the pthread library ONLY works on Linux
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-#define THREADS 60
+#define THREADS 60  // Number of threads to use | Be careful with the number of threads, it can make the program slower
 
 typedef struct {
     int start;

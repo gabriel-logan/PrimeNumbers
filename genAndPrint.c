@@ -2,8 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+// Using the sieve of Eratosthenes algorithm to find all prime numbers up to a certain limit
 int main() {
-    int loopLength = 10000000;
+    int loopLength = 10000000;  // Number of numbers to check for primality
     char* isPrime = malloc(loopLength * sizeof(char));
     memset(isPrime, 1, loopLength * sizeof(char));
 
