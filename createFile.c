@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 int main() {
-    int loopLength = 10000000;
+    int loopLength = 10;
     int* primes = malloc(loopLength * sizeof(int));
     int index = 0;
 
@@ -23,10 +23,18 @@ int main() {
         }
     }
 
-    for (int i = 0; i < index; i++) {
-        printf("%d ", primes[i]);
+    FILE* file = fopen("./docs/primes.txt", "w");
+    if (file == NULL) {
+        printf("Could not open file primes.txt\n");
+        free(primes);
+        return 1;
     }
 
+    for (int i = 0; i < index; i++) {
+        fprintf(file, "%d\n", primes[i]);
+    }
+
+    fclose(file);
     free(primes);
 
     return 0;

@@ -1,16 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int getLastNumberFromFile(const char* filename) {
+    FILE* file = fopen(filename, "r");
+    if (file == NULL) {
+        return 2;  // If the file does not exist, return 2
+    }
+
+    int number;
+    while (fscanf(file, "%d", &number) == 1) {
+        // Read all numbers from the file
+    }
+
+    fclose(file);
+    return number;
+}
+
 int main() {
-    int loopLength = 1000;
+    const char* filename = "./docs/primes.txt";
+    int start = getLastNumberFromFile(filename) + 2;  // Start from the next number after the last one in the file
+    int loopLength = 100;
     int* primes = malloc(loopLength * sizeof(int));
     int index = 0;
 
-    if (loopLength >= 2) {
-        primes[index++] = 2;
-    }
-
-    for (int i = 3; i < loopLength; i += 2) {
+    for (int i = start; i < start + loopLength; i += 2) {
         int isPrime = 1;
         for (int j = 2; j * j <= i; j++) {
             if (i % j == 0) {
@@ -23,9 +36,9 @@ int main() {
         }
     }
 
-    FILE* file = fopen("./docs/primes.txt", "w");
+    FILE* file = fopen(filename, "a");
     if (file == NULL) {
-        printf("Could not open file primes.txt\n");
+        printf("Could not open file %s\n", filename);
         free(primes);
         return 1;
     }
