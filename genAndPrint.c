@@ -6,8 +6,6 @@ int main() {
     int* primes = malloc(loopLength * sizeof(int));
     int index = 0;
 
-    primes[index++] = 1;
-
     if (loopLength >= 2) {
         primes[index++] = 2;
     }
