@@ -19,7 +19,7 @@ int getLastNumberFromFile(const char* filename) {
 int main() {
     const char* filename = "./docs/primes.txt";
     int start = getLastNumberFromFile(filename) + 2;  // Start from the next number after the last one in the file
-    int loopLength = 1000000;
+    int loopLength = 10000000;
     int* primes = malloc(loopLength * sizeof(int));
     int index = 0;
 
