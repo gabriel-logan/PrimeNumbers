@@ -34,3 +34,27 @@ sys     0m0.000s
 user@user$
 ```
 
+## How each code works
+
+### addToFile.c
+This code is responsible for adding a number to the primes.txt file.
+
+### checkMultiPrimes.c
+This code is responsible for checking if a interval of numbers is prime. And if it is, print it on the screen.
+
+### checkPrimes.c
+This code is responsible for checking if a number is prime. And if it is, print it on the screen.
+
+### createFile.c
+This code is responsible for creating the primes.txt file. It will erase the file if it already exists.
+
+### createFileWithLimit.c
+This code is responsible for creating the primes.txt file. It will erase the file if it already exists. It will also create a file with a limit of numbers.
+Example: if you want to create a file with the first 1000 prime numbers, you can use this code.
+
+### checkPrimesWithThreads.c
+NOT WORKING YET
+
+### genAndPrint.c
+This code is responsible for generating and printing prime numbers on the screen.
+
