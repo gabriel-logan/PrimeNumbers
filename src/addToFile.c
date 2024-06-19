@@ -36,7 +36,7 @@ void sieveOfEratosthenes(int limit, bool* isPrime) {
 }
 
 int main() {
-    const char* filename = "./docs/primes.txt";
+    const char* filename = "../docs/primes.txt";
     int lastNumber = getLastNumberFromFile(filename);
     int start = lastNumber + 2;   // Start from the next number after the last in the file
     int loopLength = 1000000000;  // Number of numbers to check for primality

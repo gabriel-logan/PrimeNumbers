@@ -20,6 +20,13 @@ void sieveOfEratosthenes(int limit, bool* isPrime) {
 
 int main() {
     int loopLength = 100000000;  // Number of numbers to check for primality
+    int maxPrimeCount = 1000;    // Number of prime numbers to find
+
+    if (maxPrimeCount > loopLength) {
+        printf("The number of primes to be found must be less than the number of numbers to be checked.\n");
+        return 1;
+    }
+
     bool* isPrime = malloc((loopLength + 1) * sizeof(bool));
     if (isPrime == NULL) {
         printf("Insufficient memory.\n");
@@ -29,17 +36,22 @@ int main() {
     // Find all prime numbers up to the limit
     sieveOfEratosthenes(loopLength, isPrime);
 
-    FILE* file = fopen("./docs/primes.txt", "w");
+    FILE* file = fopen("../docs/small-primes-list.txt", "w");
     if (file == NULL) {
-        printf("Could not open the file primes.txt\n");
+        printf("Could not open the file small-primes-list.txt\n");
         free(isPrime);
         return 1;
     }
 
     // Write the prime numbers to the file
+    int primeCount = 0;
     for (int i = 2; i <= loopLength; i++) {
         if (isPrime[i]) {
             fprintf(file, "%d\n", i);
+            primeCount++;
+            if (primeCount == maxPrimeCount) {
+                break;
+            }
         }
     }
 
