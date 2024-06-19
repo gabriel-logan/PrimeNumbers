@@ -45,7 +45,7 @@ int main() {
     // Allocate memory for the boolean array that indicates whether the number is prime
     bool* isPrime = malloc((limit + 1) * sizeof(bool));
     if (isPrime == NULL) {
-        printf("Memória insuficiente.\n");
+        printf("Insufficient memory.\n");
         return 1;
     }
 
@@ -55,7 +55,7 @@ int main() {
     // Open the file to add the new prime numbers
     FILE* file = fopen(filename, "a");
     if (file == NULL) {
-        printf("Não foi possível abrir o arquivo %s\n", filename);
+        printf("Could not open the file %s\n", filename);
         free(isPrime);
         return 1;
     }
