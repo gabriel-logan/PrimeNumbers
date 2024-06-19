@@ -14,3 +14,23 @@ https://github.com/gabriel-logan/PrimeNumbers/blob/main/docs/small-primes-list.t
 
 ## Small List of prime numbers (first 1000) Raw file
 https://raw.githubusercontent.com/gabriel-logan/PrimeNumbers/main/docs/small-primes-list.txt
+
+## You can also check if a number is prime using
+
+```bash 
+gcc ./checkPrimes.c -o checkPrimes
+
+./checkPrimes
+```
+
+```
+user@user$ time ./checkPrimes
+Enter a number: 1779999803
+1779999803 is a prime number.
+
+real    0m0.945s
+user    0m0.001s
+sys     0m0.000s
+user@user$
+```
+
