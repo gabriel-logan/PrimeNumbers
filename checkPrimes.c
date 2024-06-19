@@ -13,7 +13,11 @@ bool isPrime(long long int number) {
         return true;
     }
 
-    for (long long int i = 2; i * i <= number; i++) {
+    if (number % 2 == 0) {
+        return false;
+    }
+
+    for (long long int i = 3; i * i <= number; i++) {
         if (number % i == 0) {
             return false;
         }
@@ -30,14 +34,14 @@ int main() {
     fgets(input, sizeof(input), stdin);
     possiblePrimeNumber = strtoll(input, &endptr, 10);
 
-    // Check if the input was a valid number
-    if (endptr == input || *endptr != '\n') {
-        printf("Invalid input. Please enter a valid number.\n");
+    if (possiblePrimeNumber == LLONG_MAX || possiblePrimeNumber == LLONG_MIN) {
+        printf("Invalid input. Please enter a number less than %lld.\n", LLONG_MAX);
         return 1;
     }
 
-    if (possiblePrimeNumber == LLONG_MAX || possiblePrimeNumber == LLONG_MIN) {
-        printf("Invalid input. Please enter a number less than %lld.\n", LLONG_MAX);
+    // Check if the input was a valid number
+    if (endptr == input || *endptr != '\n') {
+        printf("Invalid input. Please enter a valid number.\n");
         return 1;
     }
 
