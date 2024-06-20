@@ -43,7 +43,7 @@ int main() {
     int limit = start + loopLength;
 
     // Allocate memory for the boolean array that indicates whether the number is prime
-    bool* isPrime = malloc((limit + 1) * sizeof(bool));
+    bool* isPrime = (bool*)malloc((limit + 1) * sizeof(bool));
     if (isPrime == NULL) {
         printf("Insufficient memory.\n");
         return 1;
