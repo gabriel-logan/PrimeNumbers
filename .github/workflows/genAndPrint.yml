@@ -23,6 +23,4 @@ jobs:
     - name: make
       run: gcc src/genAndPrint.c -o src/genAndPrint
     - name: run
-      env:
-        PRIMES_FILE_PATH: ./docs/test-pr.txt
       run: time ./src/genAndPrint
