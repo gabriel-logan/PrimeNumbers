@@ -19,6 +19,10 @@ void sieveOfEratosthenes(int limit, bool* isPrime) {
 }
 
 int main() {
+    const char* filename = getenv("PRIMES_FILE_PATH");
+    if (filename == NULL) {
+        filename = "../docs/primes.txt";  // Default path if the environment variable is not set
+    }
     int loopLength = 1000000000;  // Number of numbers to check for primality
     bool* isPrime = malloc((loopLength + 1) * sizeof(bool));
     if (isPrime == NULL) {
@@ -29,7 +33,7 @@ int main() {
     // Find all prime numbers up to the limit
     sieveOfEratosthenes(loopLength, isPrime);
 
-    FILE* file = fopen("../docs/primes.txt", "w");
+    FILE* file = fopen(filename, "w");
     if (file == NULL) {
         printf("Could not open the file primes.txt\n");
         free(isPrime);
