@@ -27,7 +27,7 @@ bool isPrime(long long int number) {
 }
 
 int main() {
-    long long int possiblePrimeNumberMin = 6546546546546546546;
+    long long int possiblePrimeNumberMin = 6546546546546549990;
     long long int possiblePrimeNumberMax = 6546546546546549999;
 
     for (long long int i = possiblePrimeNumberMin; i <= possiblePrimeNumberMax; i++) {

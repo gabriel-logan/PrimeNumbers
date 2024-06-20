@@ -1,12 +1,12 @@
-name: addToFile CI
+name: checkMultiPrimes CI
 
 on:
   push:
     paths:
-      - 'src/addToFile.c'
+      - 'src/checkMultiPrimes.c'
   pull_request:
     paths:
-      - 'src/addToFile.c'
+      - 'src/checkMultiPrimes.c'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -21,13 +21,11 @@ jobs:
     - name: install dependencies
       run: sudo apt-get install -y gcc
     - name: make
-      run: gcc src/addToFile.c -o src/addToFile
+      run: gcc src/checkMultiPrimes.c -o src/checkMultiPrimes
     - name: run
-      env:
-        PRIMES_FILE_PATH: ./docs/test-pr.txt
       run: |
         for i in {1..3}
         do
           echo "Run $i"
-          timeout 2m time ./src/addToFile || exit 1
+          timeout 2m time ./src/checkMultiPrimes || exit 1
         done
