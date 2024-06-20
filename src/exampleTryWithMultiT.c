@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define THREADS 60  // Number of threads to use | Be careful with the number of threads, it can make the program slower
+#define THREADS 4  // Number of threads to use | Be careful with the number of threads, it can make the program slower
 
 typedef struct {
     int start;
@@ -39,7 +39,7 @@ void* mark_multiples(void* arg) {
 }
 
 int main() {
-    int loopLength = 100000000;
+    int loopLength = 10000000;
     char* isPrime = malloc(loopLength * sizeof(char));
     memset(isPrime, 1, loopLength * sizeof(char));
 

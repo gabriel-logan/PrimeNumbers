@@ -1,0 +1,28 @@
+name: exampleTryWithMultiT CI
+
+on:
+  push:
+    paths:
+      - 'src/exampleTryWithMultiT.c'
+  pull_request:
+    paths:
+      - 'src/exampleTryWithMultiT.c'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: install dependencies
+      run: sudo apt-get install -y gcc
+    - name: make
+      run: gcc src/exampleTryWithMultiT.c -o src/exampleTryWithMultiT
+    - name: run
+      env:
+        PRIMES_FILE_PATH: ./docs/test-pr.txt
+      run: time ./src/exampleTryWithMultiT
