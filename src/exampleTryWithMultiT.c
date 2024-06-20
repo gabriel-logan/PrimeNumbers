@@ -40,7 +40,7 @@ void* mark_multiples(void* arg) {
 
 int main() {
     int loopLength = 100000000;
-    char* isPrime = malloc(loopLength * sizeof(char));
+    char* isPrime = (char*)malloc(loopLength * sizeof(char));
     memset(isPrime, 1, loopLength * sizeof(char));
 
     isPrime[0] = 0;  // 0 isn't prime
@@ -75,7 +75,7 @@ int main() {
         pthread_join(threads[i], NULL);
     }
 
-    int* primes = malloc(loopLength * sizeof(int));
+    int* primes = (int*)malloc(loopLength * sizeof(int));
     int index = 0;
 
     for (int i = 2; i < loopLength; i++) {
