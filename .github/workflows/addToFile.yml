@@ -21,6 +21,6 @@ jobs:
     - name: install dependencies
       run: sudo apt-get install -y gcc
     - name: make
-      run: gcc -o addToFile addToFile.c
+      run: gcc src/addToFile.c -o src/addToFile
     - name: run
-      run: time ./addToFile
+      run: time ./src/addToFile

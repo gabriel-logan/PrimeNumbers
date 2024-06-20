@@ -67,3 +67,6 @@ dkms.conf
 *.p7b
 *.p7s
 server.txt
+
+## Various
+gitpush.*
