@@ -27,7 +27,7 @@ int main() {
         return 1;
     }
 
-    bool* isPrime = malloc((loopLength + 1) * sizeof(bool));
+    bool* isPrime = (bool*)malloc((loopLength + 1) * sizeof(bool));
     if (isPrime == NULL) {
         printf("Insufficient memory.\n");
         return 1;
