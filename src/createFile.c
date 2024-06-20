@@ -19,7 +19,7 @@ void sieveOfEratosthenes(int limit, bool* isPrime) {
 }
 
 int main() {
-    int loopLength = 100000000;  // Number of numbers to check for primality
+    int loopLength = 1000000000;  // Number of numbers to check for primality
     bool* isPrime = malloc((loopLength + 1) * sizeof(bool));
     if (isPrime == NULL) {
         printf("Insufficient memory.\n");

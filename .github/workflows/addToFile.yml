@@ -1,0 +1,23 @@
+name: C/C++ CI
+
+on:
+  push:
+    paths:
+      - 'src/addToFile.c'
+  pull_request:
+    paths:
+      - 'src/addToFile.c'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: install dependencies
+      run: sudo apt-get install -y gcc
+    - name: make
+      run: gcc -o addToFile addToFile.c
+    - name: run
+      run: time ./addToFile

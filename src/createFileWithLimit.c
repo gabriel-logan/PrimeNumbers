@@ -19,8 +19,8 @@ void sieveOfEratosthenes(int limit, bool* isPrime) {
 }
 
 int main() {
-    int loopLength = 100000000;  // Number of numbers to check for primality
-    int maxPrimeCount = 1000;    // Number of prime numbers to find
+    int loopLength = 1000000000;  // Number of numbers to check for primality
+    int maxPrimeCount = 1000;     // Number of prime numbers to find
 
     if (maxPrimeCount > loopLength) {
         printf("The number of primes to be found must be less than the number of numbers to be checked.\n");
