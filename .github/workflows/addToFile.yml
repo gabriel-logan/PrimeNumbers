@@ -23,4 +23,6 @@ jobs:
     - name: make
       run: gcc src/addToFile.c -o src/addToFile
     - name: run
+      env:
+        PRIMES_FILE_PATH: ./docs/test-pr.txt
       run: time ./src/addToFile
