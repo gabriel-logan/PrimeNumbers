@@ -21,7 +21,7 @@ jobs:
     - name: install dependencies
       run: sudo apt-get install -y gcc
     - name: make
-      run: gcc src/exampleTryWithMultiT.c -o src/exampleTryWithMultiT
+      run: gcc src/exampleTryWithMultiT.c -o src/exampleTryWithMultiT -lm
     - name: run
       env:
         PRIMES_FILE_PATH: ./docs/test-pr.txt
