@@ -5,7 +5,7 @@
 // Using the sieve of Eratosthenes algorithm to find all prime numbers up to a certain limit
 int main() {
     int loopLength = 10000000;  // Number of numbers to check for primality
-    char* isPrime = malloc(loopLength * sizeof(char));
+    char* isPrime = (char*)malloc(loopLength * sizeof(char));
     memset(isPrime, 1, loopLength * sizeof(char));
 
     isPrime[0] = 0;  // 0 isn't prime
@@ -19,7 +19,7 @@ int main() {
         }
     }
 
-    int* primes = malloc(loopLength * sizeof(int));
+    int* primes = (int*)malloc(loopLength * sizeof(int));
     int index = 0;
 
     for (int i = 2; i < loopLength; i++) {
