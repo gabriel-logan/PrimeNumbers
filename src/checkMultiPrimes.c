@@ -1,8 +1,5 @@
-#include <limits.h>
 #include <stdbool.h>
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 bool isPrime(long long int number) {
     if (number < 2) {
