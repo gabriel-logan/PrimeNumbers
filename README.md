@@ -53,7 +53,7 @@ This code is responsible for creating the primes.txt file. It will erase the fil
 Example: if you want to create a file with the first 1000 prime numbers, you can use this code.
 
 ### checkPrimesWithThreads.c
-NOT WORKING YET
+This code is responsible for generating and printing prime numbers on the screen.
 
 ### genAndPrint.c
 This code is responsible for generating and printing prime numbers on the screen.

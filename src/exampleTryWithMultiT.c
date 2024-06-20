@@ -39,7 +39,7 @@ void* mark_multiples(void* arg) {
 }
 
 int main() {
-    int loopLength = 10000000;
+    int loopLength = 100000000;
     char* isPrime = malloc(loopLength * sizeof(char));
     memset(isPrime, 1, loopLength * sizeof(char));
 
