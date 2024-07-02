@@ -24,8 +24,8 @@ bool isPrime(long long int number) {
 }
 
 int main() {
-    long long int startLoop = 1;
-    long long int endLoop = 50;
+    long long int startLoop = 500;
+    long long int endLoop = 99999;
 
     for (long long int n = startLoop; n <= endLoop; n++) {
         long long int possiblePrimeNumberMin = n * n;
@@ -34,7 +34,6 @@ int main() {
 
         for (long long int i = possiblePrimeNumberMin; i <= possiblePrimeNumberMax; i++) {
             if (isPrime(i)) {
-                printf("%lld is a prime number. For n = %lld \n", i, n);
                 foundPrime = true;
                 break;  // Breaks the loop after the first prime number is found.
             }
