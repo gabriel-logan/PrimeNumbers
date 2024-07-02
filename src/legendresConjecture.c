@@ -24,8 +24,8 @@ bool isPrime(long long int number) {
 }
 
 int main() {
-    long long int startLoop = 500;
-    long long int endLoop = 99999;
+    long long int startLoop = 99999;
+    long long int endLoop = 999999999;
 
     for (long long int n = startLoop; n <= endLoop; n++) {
         long long int possiblePrimeNumberMin = n * n;
