@@ -24,26 +24,26 @@ bool isPrime(long long int number) {
 }
 
 int main() {
-    long long int n = 50;
-    long long int possiblePrimeNumberMin = n * n;
-    long long int possiblePrimeNumberMax = (n + 1) * (n + 1);
+    long long int startLoop = 1;
+    long long int endLoop = 50;
 
-    for (long long int i = possiblePrimeNumberMin; i <= possiblePrimeNumberMax; i++) {
-        if (isPrime(i)) {
-            printf("%lld is a prime number.\n", i);
+    for (long long int n = startLoop; n <= endLoop; n++) {
+        long long int possiblePrimeNumberMin = n * n;
+        long long int possiblePrimeNumberMax = (n + 1) * (n + 1);
+        bool foundPrime = false;
+
+        for (long long int i = possiblePrimeNumberMin; i <= possiblePrimeNumberMax; i++) {
+            if (isPrime(i)) {
+                printf("%lld is a prime number. For n = %lld \n", i, n);
+                foundPrime = true;
+                break;  // Breaks the loop after the first prime number is found.
+            }
+        }
+
+        if (!foundPrime) {
+            printf("No prime number found for n = %lld\n", n);
         }
     }
 
     return 0;
 }
-
-/**
- *     for (long long int i = possiblePrimeNumberMin; i <= possiblePrimeNumberMax; i++) {
-        if (isPrime(i)) {
-            printf("%lld is a prime number.\n", i);
-        } else {
-            printf("%lld is not a prime number.\n", i);
-        }
-    }
- *
- */

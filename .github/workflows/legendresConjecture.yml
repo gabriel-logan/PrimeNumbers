@@ -1,0 +1,26 @@
+name: legendresConjecture CI
+
+on:
+  push:
+    paths:
+      - 'src/legendresConjecture.c'
+  pull_request:
+    paths:
+      - 'src/legendresConjecture.c'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: install dependencies
+      run: sudo apt-get install -y gcc
+    - name: make
+      run: gcc src/legendresConjecture.c -o src/legendresConjecture
+    - name: run
+      run: time ./src/legendresConjecture
